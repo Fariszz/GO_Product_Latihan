@@ -83,7 +83,7 @@ func (h *productHandler) CreateProduct(c *gin.Context) {
 func (h *productHandler) UpdateProduct(c *gin.Context) {
 	var inputID product.GetProductDetailInput
 
-	err := c.ShouldBindJSON(&inputID)
+	err := c.ShouldBindUri(&inputID)
 	
 	if err != nil {
 		response := helper.APIResponse("Failed to update product", http.StatusBadRequest, "error", nil)
